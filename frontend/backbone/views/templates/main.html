@@ -1,0 +1,51 @@
+    <div id="navtop" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'backend.views.login.home' %}"><img src="/frontend/webroot/img/logo_arsoni.png" /></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+          	<li id="profile_image"><img src="/frontend/webroot/img/img-profile.jpg" alt="Profile Pic"></li>
+          	<li>Hello Admin</li>
+            <li><a href="#">Config</a></li>
+            <li><a href="#">Logout</a></li>
+            <li class="small grey">Last Login: 3 hours ago</li>
+         	<li><a href="#" title="Configuración">Configuración</a></li>
+            <li><a href="{% url 'backend.views.login.cerrar' %}" title="Cerrar Sesión">Cerrar Sesión</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> 	
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-pills nav-stacked">
+          	<li class="active" ><a href="#!/clientes" title="Clientes">Clientes</a></li>
+			<li><a href="/productos" title="Productos">Productos</a></li>
+			<li><a href="#" title="Fórmulas">Fórmulas</a></li>
+			<li><a href="/pedidos" title="Pedidos">Pedidos</a></li>
+			<li><a href="#" title="Envíos">Envíos</a></li>
+			<li><a href="#" title="Excedentes">Excedentes</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+            <li><a href="">More navigation</a></li>
+          </ul>
+        </div>
+        
+        <div id="notif-message" class="message"></div>
+        
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"></div>
+        
+      </div>
+    </div>
