@@ -1,5 +1,5 @@
 ﻿# -*- coding: utf-8 -*-
-from backend.models import *
+from backend.models.cms import *
 from tastypie.resources import ModelResource
 from tastypie.authorization import DjangoAuthorization, Authorization
 from django.shortcuts import render_to_response

@@ -1,7 +1,7 @@
 import settings
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from backend.api import *
+from backend.api import cms
 admin.autodiscover()
 
 clientes_resource = ClientesResource()
@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     (r'^frontend/(?P<path>.*)$', 'django.views.static.serve', #Para servir archivos estaticos
         {'document_root': settings.STATIC_DOC_ROOT, 'show_indexes': True}), 
      (r'^$', 'backend.api.home'),
-     (r'^api/', include(user_resource.urls)),
-     (r'^api/', include(clientes_resource.urls)),
-     (r'^api/', include(app_resource.urls)),
+     (r'^cms/api/', include(user_resource.urls)),
+     (r'^cms/api/', include(clientes_resource.urls)),
+     (r'^cms/api/', include(app_resource.urls)),
 )
