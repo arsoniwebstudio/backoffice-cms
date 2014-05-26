@@ -1,7 +1,7 @@
 import config.settings
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from api import cms
+from api.cms import *
 admin.autodiscover()
 
 clientes_resource = ClientesResource()
