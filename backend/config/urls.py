@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     (r'^frontend/(?P<path>.*)$', 'django.views.static.serve', #Para servir archivos estaticos
         {'document_root': settings.STATIC_DOC_ROOT, 'show_indexes': True}), 
      (r'^$', 'api.cms.home'),
-     (r'^cms/api/', include(user_resource.urls)),
-     (r'^cms/api/', include(clientes_resource.urls)),
-     (r'^cms/api/', include(app_resource.urls)),
+     (r'^api/cms/', include(user_resource.urls)),
+     (r'^api/cms/', include(clientes_resource.urls)),
+     (r'^api/cms/', include(app_resource.urls)),
 )
