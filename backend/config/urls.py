@@ -1,4 +1,4 @@
-import config.settings
+from config import settings
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from api.cms import *
