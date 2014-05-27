@@ -25,7 +25,7 @@ require.config({
 	  },
     'pageable': {
     	deps: ['backbone', 'underscore'],
-		exports: 'pageable'
+		  exports: 'pageable'
 	  },
 	'paginator': {
 		deps: ['backbone', 'underscore', 'pageable','backgrid'],
