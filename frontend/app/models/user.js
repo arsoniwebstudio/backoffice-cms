@@ -5,12 +5,12 @@ define([
 ], function ($, Backbone, Utils) {
     
   var userModel = Backbone.Model.extend({
-		url: 'api/cms/user/',
+		url: 'http://backend.arsoñi.com/api/cms/user/',
 		login: function(){
 			return $.ajax({
 				type: 'POST',
 		          dataType: 'json',
-		          url: 'api/cms/user/login/',
+		          url: 'http://backend.arsoñi.com/api/cms/user/login/',
 		          data: {
 		            user: (this.get('username') || ''),
 		            password: (this.get('password')),
@@ -25,7 +25,7 @@ define([
 			return $.ajax({
 				type: 'POST',
 		          dataType: 'json',
-		          url: 'api/cms/user/login/',
+		          url: 'http://backend.arsoñi.com/api/cms/user/login/',
 		          data: {
 		            success_url: '/'
 		          },

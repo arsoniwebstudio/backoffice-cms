@@ -4,7 +4,7 @@ define([
 ], function ($, Backbone) {
     
   var clienteModel = Backbone.Model.extend({
-		url: 'api/apps/',
+		url: 'http://backend.arsoñi.com/api/cms/apps/',
   });
 
   return clienteModel;
