@@ -5,7 +5,7 @@ define([
 ], function ($, Backbone, Utils) {
     
   var userModel = Backbone.Model.extend({
-		url: 'api/user/',
+		url: 'api/cms/user/',
 		login: function(){
 			return $.ajax({
 				type: 'POST',
