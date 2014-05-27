@@ -10,7 +10,7 @@ define([
 			return $.ajax({
 				type: 'POST',
 		          dataType: 'json',
-		          url: 'api/user/login/',
+		          url: 'api/cms/user/login/',
 		          data: {
 		            user: (this.get('username') || ''),
 		            password: (this.get('password')),
@@ -25,7 +25,7 @@ define([
 			return $.ajax({
 				type: 'POST',
 		          dataType: 'json',
-		          url: 'api/user/login/',
+		          url: 'api/cms/user/login/',
 		          data: {
 		            success_url: '/'
 		          },
