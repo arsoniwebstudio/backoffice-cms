@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 from models.cms import *
-from tastypie.resources import ModelResource
+from tastypie.resources import Resource, ModelResource
 from tastypie.authorization import DjangoAuthorization, Authorization
 from django.shortcuts import render_to_response
 from django.conf.urls import url
