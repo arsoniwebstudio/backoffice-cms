@@ -14,7 +14,38 @@ from django.forms.models import model_to_dict
 def home(request):
     return render_to_response('document.html',{'title':'Inicio'})
 
-class UserResource(ModelResource):
+class BaseCorsResource(Resource):
+    """
+    Class implementing CORS
+    """
+    def create_response(self, *args, **kwargs):
+        response = super(BaseCorsResource, self).create_response(*args, **kwargs)
+        response['Access-Control-Allow-Origin'] = '*'
+        response['Access-Control-Allow-Headers'] = 'Content-Type'
+        return response
+
+    def method_check(self, request, allowed=None):
+        if allowed is None:
+            allowed = []
+
+        request_method = request.method.lower()
+        allows = ','.join(map(str.upper, allowed))
+
+        if request_method == 'options':
+            response = HttpResponse(allows)
+            response['Access-Control-Allow-Origin'] = '*'
+            response['Access-Control-Allow-Headers'] = 'Content-Type'
+            response['Allow'] = allows
+            raise ImmediateHttpResponse(response=response)
+
+        if not request_method in allowed:
+            response = http.HttpMethodNotAllowed(allows)
+            response['Allow'] = allows
+            raise ImmediateHttpResponse(response=response)
+
+        return request_method
+
+class UserResource(BaseCorsResource,ModelResource):
     class Meta:
         resource_name = 'user'
         allowed_methods = ['get', 'post', 'put', 'delete']
@@ -74,14 +105,14 @@ class UserResource(ModelResource):
         
         return self.create_response(request, response_data)
             
-class ClientesResource(ModelResource):
+class ClientesResource(BaseCorsResource,ModelResource):
     class Meta:
         queryset = Clientes.objects.order_by("-creado")
         resource_name = 'clientes'
         allowed_methods = ['get', 'post', 'put', 'delete']
         authorization = DjangoAuthorization()
 
-class AppClientsResource(ModelResource):
+class AppClientsResource(BaseCorsResource,ModelResource):
     class Meta:
         queryset = ClientApps.objects.order_by("-creado")
         resource_name = 'apps'
