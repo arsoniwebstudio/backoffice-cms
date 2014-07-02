@@ -64,6 +64,8 @@ class UserResource(ModelResource):
         clave = request.POST['password']
         user = authenticate(username=usuario,password=clave)
         
+        print user
+
         session=None
         notif={}
         
