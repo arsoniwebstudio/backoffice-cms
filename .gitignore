@@ -1,3 +1,1 @@
 *.pyc
-backend/config/settings.py
-backend/config/wsgi.py
