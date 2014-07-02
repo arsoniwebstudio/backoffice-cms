@@ -127,8 +127,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
      'django.contrib.admindocs',
-     'backend.models',
-     'backend.api',
+     'models',
+     'api',
      'tastypie'
 )
 
