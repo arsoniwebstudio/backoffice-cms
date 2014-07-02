@@ -104,12 +104,12 @@ class UserResource(ModelResource):
         
         return self.create_response(request, response_data)
             
-# class ClientesResource(ModelResource):
-#     class Meta:
-#         queryset = Clientes.objects.order_by("-creado")
-#         resource_name = 'clientes'
-#         allowed_methods = ['get', 'post', 'put', 'delete']
-#         authorization = DjangoAuthorization()
+class ClientesResource(ModelResource):
+    class Meta:
+        queryset = Clientes.objects.order_by("-creado")
+        resource_name = 'clientes'
+        allowed_methods = ['get', 'post', 'put', 'delete']
+        authorization = DjangoAuthorization()
         
 
         
