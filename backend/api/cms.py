@@ -59,7 +59,6 @@ class UserResource(ModelResource):
 
     def get_login(self, request, **kwargs):
         print "Login"
-        # self.method_check(request, allowed=['post'])
         
         usuario = request.POST['user']
         clave = request.POST['password']
