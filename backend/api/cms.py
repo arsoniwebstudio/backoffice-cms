@@ -51,7 +51,7 @@ class UserResource(ModelResource):
         allowed_methods = ['get', 'post', 'put', 'delete']
         authorization = Authorization()
         
-    def prepend_urls(self):
+    #def prepend_urls(self):
         #""" Add the following array of urls to the GameResource base urls """
         # return [
         #     url(r"^(?P<resource_name>%s)/login%s$" % (self._meta.resource_name, trailing_slash()), self.wrap_view('get_login'), name="api_get_login"),
@@ -105,14 +105,14 @@ class UserResource(ModelResource):
         
         return self.create_response(request, response_data)
             
-class ClientesResource(BaseCorsResource,ModelResource):
+class ClientesResource(ModelResource):
     class Meta:
         queryset = Clientes.objects.order_by("-creado")
         resource_name = 'clientes'
         allowed_methods = ['get', 'post', 'put', 'delete']
         authorization = DjangoAuthorization()
 
-class AppClientsResource(BaseCorsResource,ModelResource):
+class AppClientsResource(ModelResource):
     class Meta:
         queryset = ClientApps.objects.order_by("-creado")
         resource_name = 'apps'
