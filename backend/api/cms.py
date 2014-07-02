@@ -60,9 +60,9 @@ class UserResource(ModelResource):
     def get_login(self, request, **kwargs):
         print "Login"
         
-        usuario = request.POST['user']
-        clave = request.POST['password']
-        user = authenticate(username=usuario,password=clave)
+        # usuario = request.POST['user']
+        # clave = request.POST['password']
+        # user = authenticate(username=usuario,password=clave)
         
         session=None
         notif={}
