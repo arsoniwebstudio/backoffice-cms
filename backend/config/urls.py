@@ -1,4 +1,10 @@
-from config import settings
+# if ENV = "Production":
+# 	from settings import production
+# 	settings=production
+# else
+# 	from settings import local
+# 	settings=local
+
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from api.cms import *
