@@ -1,5 +1,6 @@
 ﻿from .settings import *
-DEBUG = False
+# DEBUG = False
+DEBUG = True
 
 #MANAGERS = ADMINS
 
