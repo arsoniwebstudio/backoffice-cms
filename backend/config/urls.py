@@ -6,7 +6,6 @@ admin.autodiscover()
 
 clientes_resource = ClientesResource()
 user_resource = UserResource()
-app_resource = AppClientsResource()
 
 urlpatterns = patterns('',
 
@@ -16,5 +15,4 @@ urlpatterns = patterns('',
      (r'^$', 'api.cms.home'),
      (r'^api/cms/', include(user_resource.urls)),
      (r'^api/cms/', include(clientes_resource.urls)),
-     (r'^api/cms/', include(app_resource.urls)),
 )
