@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 import os
 import sys
+sys.path.append('/home/apps/backoffice-cms/backend/config/settings')
 
 if __name__ == "__main__":
-	
-	sys.path.append('/home/apps/backoffice-cms/backend/config/settings')
 
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.production")
 
